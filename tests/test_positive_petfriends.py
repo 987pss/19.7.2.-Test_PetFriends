@@ -1,8 +1,8 @@
 import pytest
 import pathlib
 from pathlib import Path
-from app.api import PetFriends
-from app.settings import email, password, name, animal_type, age, pet_photo_path, new_name, new_animal_type, new_age, \
+from api import PetFriends
+from settings import email, password, name, animal_type, age, pet_photo_path, new_name, new_animal_type, new_age, \
     filter_, invalid_api_key_1_char, invalid_api_key_invalid_55_chars, invalid_api_key_56_chars, \
     invalid_api_key_invalid_57_chars, invalid_api_key_1_invalid_char, invalid_age_1_letter, invalid_pet_photo_gif_path, invalid_pet_photo_txt_path
 
