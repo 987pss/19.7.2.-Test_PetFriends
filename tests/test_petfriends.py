@@ -22,7 +22,7 @@ def test_get_api_key_valid_user(email=email,
     assert api_key
 
 
-def test_add_new_pet_without_photo_valid_data_valid_auth_key(name=name,
+def test_add_new_pet_without_photo_valid_auth_key_valid_data(name=name,
                                                              animal_type=animal_type,
                                                              age=age):
     """Позитивное тестирование добавления нового питомца без фото:
@@ -45,7 +45,7 @@ def test_add_new_pet_without_photo_valid_data_valid_auth_key(name=name,
     assert not result['pet_photo']
 
 
-def test_add_new_pet_with_photo_valid_data_valid_auth_key(name=name,
+def test_add_new_pet_with_photo_valid_auth_key_valid_data(name=name,
                                                           animal_type=animal_type,
                                                           age=age,
                                                           pet_photo_path=pet_photo_path):
@@ -81,7 +81,7 @@ def test_get_list_of_pets_valid_auth_key():
     assert len(result['pets']) > 0
 
 
-def test_update_pet_with_photo_valid_data_valid_auth_key(new_name=new_name,
+def test_update_pet_with_photo_valid_auth_key_valid_data(new_name=new_name,
                                                          new_animal_type=new_animal_type,
                                                          new_age=new_age):
     """Позитивное тестирование обновления информации о добавленном питомце с фото:
@@ -101,7 +101,7 @@ def test_update_pet_with_photo_valid_data_valid_auth_key(new_name=new_name,
     assert result['age'] == new_age
 
 
-def test_add_photo_of_pet_without_photo_valid_data_valid_auth_key():
+def test_add_photo_of_pet_without_photo_valid_auth_key_valid_data():
     """Позитивное тестирование добавления фото добавленному питомцу без фото:
     - код ответа HTTP - 200
     - у добавленного питомца есть фото"""
