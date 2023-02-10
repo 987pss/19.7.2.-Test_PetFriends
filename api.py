@@ -1,7 +1,7 @@
 import requests
 import json
 from requests_toolbelt.multipart.encoder import MultipartEncoder
-from settings import base_url, get_api_key_url,  add_new_pet_without_photo_url, add_new_pet_with_photo_url , \
+from app.settings import base_url, get_api_key_url,  add_new_pet_without_photo_url, add_new_pet_with_photo_url , \
     get_list_of_pets_url, update_pet_url, add_photo_of_pet_url, delete_pet_url
 
 
@@ -13,8 +13,8 @@ class PetFriends:
                     password: str) -> json:
         """Метод отправляет GET-запрос для получения ключа API и возвращает:
         - код ответа HTTP
-        - ключ API
-        - результат ответа в формате JSON или TEXT"""
+        - результат ответа в формате JSON или TEXT
+        - ключ API"""
 
         headers_get_api_key = {
             'email': email,
@@ -42,10 +42,10 @@ class PetFriends:
                                   name: str,
                                   animal_type: str,
                                   age: str) -> json:
-        """Метод отправляет GET-запрос для добавления нового питомца без фото и возвращает:
+        """Метод отправляет POST-запрос для добавления нового питомца без фото и возвращает:
         - код ответа HTTP
-        - id добавленного питомца
-        - результат ответа в формате JSON или TEXT"""
+        - результат ответа в формате JSON или TEXT
+        - id добавленного питомца"""
 
         data_add_new_pet_without_photo = MultipartEncoder(
             fields={
@@ -82,10 +82,10 @@ class PetFriends:
                     animal_type: str,
                     age: str,
                     pet_photo_path: str) -> json:
-        """Метод отправляет GET-запрос для добавления нового питомца и возвращает:
+        """Метод отправляет POST-запрос для добавления нового питомца с фото и возвращает:
         - код ответа HTTP
-        - id добавленного питомца
-        - результат ответа в формате JSON или TEXT"""
+        - результат ответа в формате JSON или TEXT
+        - id добавленного питомца"""
 
         data_add_new_pet_with_photo = MultipartEncoder(
             fields={
@@ -146,7 +146,7 @@ class PetFriends:
                    new_name: str,
                    new_animal_type: str,
                    new_age: str) -> json:
-        """Метод отправляет GET-запрос для обновление информации о добавленном питомце и возвращает:
+        """Метод отправляет PUT-запрос для обновление информации о добавленном питомце и возвращает:
         - код ответа HTTP
         - результат ответа в формате JSON или TEXT"""
 
@@ -174,9 +174,8 @@ class PetFriends:
                          auth_key: str,
                          pet_id: str,
                          pet_photo_path: str):
-        """Метод отправляет GET-запрос для добавления нового питомца и возвращает:
+        """Метод отправляет POST-запрос для добавления фото к добавленному питомцу и возвращает:
         - код ответа HTTP
-        - id добавленного питомца
         - результат ответа в формате JSON или TEXT"""
 
         data_add_photo_of_pet = MultipartEncoder(
@@ -205,7 +204,7 @@ class PetFriends:
     def delete_pet(self,
                    auth_key: str,
                    pet_id: str) -> json:
-        """Метод отправляет GET-запрос для удаления добавленного питомца и возвращает:
+        """Метод отправляет DELETE-запрос для удаления добавленного питомца и возвращает:
         - код ответа HTTP
         - результат ответа в формате JSON или TEXT"""
 
