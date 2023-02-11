@@ -23,7 +23,7 @@ password = os.getenv('password')
 name = 'Мася'
 animal_type = 'кошка'
 age = '12'
-pet_photo_path = str(Path('..', 'app', 'images', 'Masya.jpg'))
+pet_photo_path = str(Path('..', 'images', 'Masya.jpg'))
 
 # Данные для обновления информации о добавленном питомце
 new_name = 'Вася'
@@ -40,5 +40,5 @@ invalid_api_key_56_chars = 'gh45647cd3ad770dfgb351af4cb202ed1237ff1661e9dfgh0c4v
 invalid_api_key_invalid_57_chars = 'gh45647cd3ad770dfgb351af4cb202ed1237ff1661e9dfgh0c4v3f567'
 invalid_api_key_1_invalid_char = '\\'
 invalid_age_1_letter = 'a'
-invalid_pet_photo_gif_path = str(Path('..', 'app', 'images', 'Masya_gif.gif'))
-invalid_pet_photo_txt_path = str(Path('..', 'app', 'images', 'text_txt.txt'))
+invalid_pet_photo_gif_path = str(Path('..', 'images', 'Masya_gif.gif'))
+invalid_pet_photo_txt_path = str(Path('..', 'images', 'text_txt.txt'))
